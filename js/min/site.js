@@ -1,0 +1,1 @@
+function testFunction(){"use strict";return!0}testFunction();
