@@ -1,0 +1,39 @@
+# ignore files and folders
+#ignore node modules
+/node_modules
+
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+# ignore compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# ignore packaged files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# CODEKIT FILES
+*.codekit
+
+# ignore all files starting with .
+.*
+!.eslintrc
+!.editorconfig
+!.gitignore
+
+
+ 
