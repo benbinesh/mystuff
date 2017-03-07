@@ -8,6 +8,12 @@ var uglify = require('gulp-uglify');
 var notify = require('gulp-notify');
 var gutil = require('gulp-util');
 var eslint = require('gulp-eslint');
+var less = require('gulp-less');
+var cleanCSS = require('gulp-clean-css');
+var browserSync = require('browser-sync').create();
+var autoprefixer = require('autoprefixer');
+var postcss = require('gulp-postcss');
+
 gulp.task('default', function () {
   // place code for your default task here
 });
@@ -56,11 +62,25 @@ gulp.task('scripts', function () {
     .pipe(notify({ message: 'Scripts task complete' }))
 })
 
+gulp.task('styles', function () {
+  return gulp.src('./css/style.css')
+    .pipe(plumber({
+      errorHandler: reportError
+    }))
+    .pipe(less())
+    .pipe(cleanCSS())
+    .pipe(postcss([autoprefixer({ browsers: ['> 1%'], remove: false })]))
+    .pipe(gulp.dest('./css/min'))
+    .pipe(browserSync.stream())
+    .pipe(notify({ message: 'Styles task complete' }))
+})
+
 // This handles watching and running tasks as well as telling our LiveReload server to refresh things
 gulp.task('watch', function () {
   // Whenever a stylesheet is changed, recompile
+  gulp.watch('./css/*.css', ['styles']);
   // If user-developed Javascript is modified, re-run our hinter and scripts tasks
   gulp.watch('./js/*.js', ['lint', 'scripts']);
 
 });
-gulp.task('default', ['lint', 'scripts', 'watch']);
+gulp.task('default', ['lint', 'scripts', 'styles', 'watch']);
