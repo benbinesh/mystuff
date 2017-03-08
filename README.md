@@ -23,6 +23,7 @@ $ npm -v
 ## Project Setup ##
 1. Git clone the repository
 2. Run NPM install to load dependencies to root of project folder
+
 ```shell
 sudo npm install
 ```
