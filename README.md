@@ -1,5 +1,5 @@
 # Gulp Sample Repo #
-## NPM install Instruction
+## NPM install Instruction ##
  To install Node.js, type the following command in your terminal:
 ```shell
 sudo apt-get install nodejs
