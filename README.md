@@ -19,7 +19,7 @@ v0.10.25
 $ npm -v
 1.3.10
 ```
-## Project Setup
+## Project Setup##
 1. Git clone the repository
 2. Run NPM install to load dependencies to root of project folder
 ```shell
