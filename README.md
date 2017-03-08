@@ -19,7 +19,7 @@ v0.10.25
 $ npm -v
 1.3.10
 ```
-## Project Setup##
+## Project Setup ##
 1. Git clone the repository
 2. Run NPM install to load dependencies to root of project folder
 ```shell
@@ -38,9 +38,9 @@ Run the gulp command in your project directory:
 ```shell
 gulp
 ```
-##Reference##
-[Node.js Installation](http://www.hostingadvice.com/how-to/install-nodejs-ubuntu-14-04/#ubuntu-package-manager )
-[Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md)
+## Reference ##
+1. [Node.js Installation](http://www.hostingadvice.com/how-to/install-nodejs-ubuntu-14-04/#ubuntu-package-manager )
+2. [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md)
 
 
 
