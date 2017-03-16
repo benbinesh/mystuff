@@ -49,7 +49,7 @@ gulp
 |	+-- min
 +-- js
 |	+-- min
-
++-- less
 ```
 
 ## Reference ##
