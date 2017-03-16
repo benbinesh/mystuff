@@ -43,7 +43,7 @@ var reportError = function (error) {
   // Prevent the 'watch' task from stopping
   this.emit('end');
 }
-
+//lint task
 gulp.task('lint', function () {
   return gulp.src(['./js/*.js', 'gulpfile.js'])
     .pipe(eslint())
@@ -51,6 +51,7 @@ gulp.task('lint', function () {
     .pipe(notify({ message: 'JS Hinting task complete' }));
 })
 
+//script task
 gulp.task('scripts', function () {
   return gulp.src('./js/*.js')
     .pipe(plumber({
@@ -62,6 +63,7 @@ gulp.task('scripts', function () {
     .pipe(notify({ message: 'Scripts task complete' }))
 })
 
+/** task to run on plan styles sheet  */
 gulp.task('styles', function () {
   return gulp.src('./css/style.css')
     .pipe(plumber({
@@ -75,12 +77,27 @@ gulp.task('styles', function () {
     .pipe(notify({ message: 'Styles task complete' }))
 })
 
+gulp.task('less', function () {
+  return gulp.src('./less/master.less')
+    .pipe(plumber({
+      errorHandler: reportError
+    }))
+    .pipe(less())
+    .pipe(cleanCSS())
+    .pipe(postcss([autoprefixer({ browsers: ['> 1%'], remove: false })]))
+    .pipe(gulp.dest('./css'))
+    .pipe(browserSync.stream())
+    .pipe(notify({ message: 'Less task complete' }))
+})
+
 // This handles watching and running tasks as well as telling our LiveReload server to refresh things
 gulp.task('watch', function () {
   // Whenever a stylesheet is changed, recompile
   gulp.watch('./css/*.css', ['styles']);
+  //Whenever a less files are changed, recompile
+  gulp.watch('./less/**/*.less', ['less']);
   // If user-developed Javascript is modified, re-run our hinter and scripts tasks
   gulp.watch('./js/*.js', ['lint', 'scripts']);
 
 });
-gulp.task('default', ['lint', 'scripts', 'styles', 'watch']);
+gulp.task('default', ['lint', 'scripts', 'styles', 'less', 'watch']);
