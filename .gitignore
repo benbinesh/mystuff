@@ -45,7 +45,9 @@ application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
 
-
+!css
+!js
+!images
 
 
  
