@@ -2,6 +2,8 @@
 #ignore node modules
 /node_modules
 /system
+/vendor
+
 
 
 # ignore log files and databases
@@ -48,6 +50,14 @@ application/logs/*
 !css
 !js
 !images
+
+#composer files
+composer.lock
+
+#ci files
+contributing.md
+readme.rst
+
 
 
  
