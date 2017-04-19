@@ -1,4 +1,4 @@
-# ITH ATS Project #
+# Codeigniter Boiler plate #
 ## NPM install Instruction ##
  To install Node.js, type the following command in your terminal:
 ```shell
