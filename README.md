@@ -27,6 +27,31 @@ $ npm -v
 ```shell
 sudo npm install
 ```
+3. Run composer install to load dependencies to root of project folder
+```shell
+sudo composer install
+```
+4. Create .env file for setting local variable  
+```apacheconfig
+CI_ENV=development
+
+##DB settings 
+DB_HOST=localhost
+DB_DATABASE=
+DB_USERNAME=
+DB_PASSWORD=
+
+
+#mail settings
+
+MAIL_DRIVER=
+MAIL_HOST=
+MAIL_PORT=587
+MAIL_USERNAME=
+MAIL_PASSWORD=
+MAIL_ENCRYPTION=
+
+```
 ## Setup Gulp ##
 Install the gulp command
 ```shell
@@ -41,16 +66,6 @@ Run the gulp command in your project directory:
 gulp
 ```
 
-## Folder Structure ##
-```
-.
-
-+-- css
-|	+-- min
-+-- js
-|	+-- min
-+-- less
-```
 
 ## Reference ##
 1. [Node.js Installation](http://www.hostingadvice.com/how-to/install-nodejs-ubuntu-14-04/#ubuntu-package-manager )
